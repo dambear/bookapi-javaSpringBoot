@@ -1,11 +1,17 @@
 package com.danbear.bookapi.book;
 
 
-public record Book(
+import jakarta.validation.constraints.NotEmpty;
 
+public record Book(
+    @NotEmpty
     Integer id,
+    @NotEmpty
     String bookName,
+    @NotEmpty
     String bookAuthor,
+    @NotEmpty
     String bookGenre,
+    @NotEmpty
     String yearPublish
 ) {}
