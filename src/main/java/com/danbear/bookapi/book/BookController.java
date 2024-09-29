@@ -28,7 +28,7 @@ public class BookController {
     Optional<Book> book = bookRepository.findById(id);
 
     if(book.isEmpty()) {
-      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Book not found");
+      throw new BookNotFoundException();
     }
     return book.get();
   }
